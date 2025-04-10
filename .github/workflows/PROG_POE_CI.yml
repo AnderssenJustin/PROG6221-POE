@@ -1,0 +1,40 @@
+# This is a basic workflow to help you get started with Actions
+name: CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      # Checkout the repository
+      - uses: actions/checkout@v4
+
+      # Set up .NET environment
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '7.0' # Adjust this based on your project's .NET version
+
+      # Restore dependencies
+      - name: Restore Dependencies
+        run: dotnet restore
+
+      # Build the project
+      - name: Build
+        run: dotnet build --no-restore --configuration Release
+
+      # Run unit tests
+      - name: Test
+        run: dotnet test --no-build --configuration Release
+
+      # Check code formatting (optional)
+      - name: Check Code Formatting
+        run: dotnet tool install -g dotnet-format && dotnet format --check
+
