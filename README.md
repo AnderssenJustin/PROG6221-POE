@@ -18,3 +18,20 @@ When the user types quit the chatbot stops and says goodbye
 
 
 
+References
+Art., A., n.d. Text to ASCII Art. [Online] 
+Available at: https://www.asciiart.eu/text-to-ascii-art
+[Accessed 9 April 2025].
+Burge, S., 2023. What is Password Security & Why is it Important?. [Online] 
+Available at: https://internationalsecurityjournal.com/password-security/
+[Accessed 14 April 2025].
+Jung, T., 2023. Secure browsing: A guide to browsing the internet safely. [Online] 
+Available at: https://levelblue.com/blogs/security-essentials/secure-browsing-a-guide-to-browsing-the-internet-safely
+[Accessed 14 April 2025].
+Kosinski, M., n.d. What is phishing?. [Online] 
+Available at: https://www.ibm.com/think/topics/phishing#:~:text=Phishing%20is%20a%20type%20of,a%20form%20of%20social%20engineering.
+[Accessed 14 April 2025].
+Voicemaker., 2025. Voicemaker - Text to Speech Converter.. [Online] 
+Available at: https://voicemaker.in/
+[Accessed 16 April 2025].
+
