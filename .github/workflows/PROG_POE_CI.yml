@@ -12,34 +12,29 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      # Checkout code
-      - uses: actions/checkout@v4
+      - name: Checkout Repository
+        uses: actions/checkout@v4
       
-      # Setup .NET
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: '9.0.x'  
+          dotnet-version: '9.0.x'
 
-      # Change to directory containing the solution file
       - name: Navigate to solution directory
         run: cd ST10340607_CyberSecurity_ChatBot
         shell: bash
 
-      # 1. Restore dependencies
-      - name: Restore NuGet packages
+      - name: Restore Dependencies
         run: dotnet restore
-
-      # 2. Build solution (checks syntax)
+      
       - name: Build Solution
         run: dotnet build --configuration Release --no-restore
 
-      # 3. Code formatting check
       - name: Verify Code Formatting
         run: |
           dotnet tool install -g dotnet-format
           dotnet format --verify-no-changes --check
-
-      # 4. Run tests (if any exist)
+      
       - name: Run Tests
         run: dotnet test --configuration Release --no-build
+
