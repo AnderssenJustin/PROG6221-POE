@@ -20,21 +20,19 @@ jobs:
         with:
           dotnet-version: '9.0.x'
 
-      - name: Navigate to solution directory
-        run: cd ST10340607_CyberSecurity_ChatBot
-        shell: bash
-
       - name: Restore Dependencies
+        working-directory: ST10340607_CyberSecurity_ChatBot
         run: dotnet restore
-      
+
       - name: Build Solution
+        working-directory: ST10340607_CyberSecurity_ChatBot
         run: dotnet build --configuration Release --no-restore
 
       - name: Verify Code Formatting
-        run: |
-          dotnet tool install -g dotnet-format
-          dotnet format --verify-no-changes --check
+        working-directory: ST10340607_CyberSecurity_ChatBot
+        run: dotnet format ST10340607_CyberSecurity_ChatBot.sln --verify-no-changes
       
       - name: Run Tests
+        working-directory: ST10340607_CyberSecurity_ChatBot
         run: dotnet test --configuration Release --no-build
 
