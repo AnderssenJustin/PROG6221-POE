@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace ST10340607_CyberSecurity_ChatBot
 {
-    internal class Chatbot
+    public abstract class Chatbot// creation of the abstract class 
     {
+        public abstract void cybersecurityQuestions();// abstract method that is overidden 
     }
 }
+
