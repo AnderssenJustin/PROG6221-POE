@@ -11,11 +11,15 @@ namespace ST10340607_CyberSecurity_ChatBot
             Console.Title = "Cybersecurity Awareness Chatbot";
             try
             {
-                String audioFilePath = @"C:\Users\lab_services_student\Desktop\PROG6221-POE\1744782720344369660p9a3uycs-voicemaker.in-speech.wav";
-                SoundPlayer player = new SoundPlayer(audioFilePath);
-                player.Play();// playing the audio file 
+                if (OperatingSystem.IsWindows())
+                {
+                    String audioFilePath = @"C:\Users\lab_services_student\Desktop\PROG6221-POE\1744782720344369660p9a3uycs-voicemaker.in-speech.wav";
+                    SoundPlayer player = new SoundPlayer(audioFilePath);
+                    player.Play(); // playing the audio file
+                }
+
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 Console.WriteLine("There was an error with the audio and it did not play");
             }
