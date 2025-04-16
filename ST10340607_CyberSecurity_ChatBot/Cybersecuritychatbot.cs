@@ -80,12 +80,12 @@ namespace ST10340607_CyberSecurity_ChatBot
                 TypeWriterEffect("Safe browsing  is the act of being safe while using the internet to avoid any potential scams or malware");
                 Console.WriteLine();
             }
-            else if (userInput.Contains("suspicious links"))
+            else if (userInput.Contains("suspicious link"))
             {
                 Console.ForegroundColor = ConsoleColor.Green;
                 TypeWriterEffect(" Great Question,\n" +
                     "1.Have a look at the url, there will be misspellings\n" +
-                    "2.There will be very strange domain names for example : \n" +
+                    "2.There will be very strange domain names for example :  www.go0gle.com \n" +
                     "3.There is no HTTPS and is only hhtp://, these sites arent secure\n" +
                     "4.There could be a sense of urgency for example ACT NOW! ");
                 Console.WriteLine();
