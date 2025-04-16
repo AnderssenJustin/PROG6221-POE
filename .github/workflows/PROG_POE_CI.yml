@@ -35,4 +35,3 @@ jobs:
       - name: Run Tests
         working-directory: ST10340607_CyberSecurity_ChatBot
         run: dotnet test --configuration Release --no-build
-
