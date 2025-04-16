@@ -18,7 +18,7 @@ namespace ST10340607_CyberSecurity_ChatBot
             {
                 Console.ForegroundColor = ConsoleColor.Green;            // changing the colour of the font. 
                 TypeWriterEffect("I am here to help with your Cybersecurity needs, Please ask me a question.");  // prompting the user to ask a question 
-                Console.ResetColor();  // method called to change back to the original colour 
+                Console.ResetColor();  // method called to change back to the original colour. 
                 Console.WriteLine();
 
                 String userQuestion = Console.ReadLine().ToLower(); // String maniplualtion changing the question the user asks to lower case.
@@ -28,7 +28,7 @@ namespace ST10340607_CyberSecurity_ChatBot
                     Console.ForegroundColor = ConsoleColor.Red;
                     Console.WriteLine("Please ask me a cybersecurity question, Im here to help");
                     Console.ResetColor();
-                    continue;
+                    continue; // use to skip the remaining code and move to next iteration 
                 }
                 ProcessInput(userQuestion);
             }
