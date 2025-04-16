@@ -42,21 +42,21 @@ namespace ST10340607_CyberSecurity_ChatBot
                 Console.WriteLine();
 
             }
-            else if (userInput.Contains("whats your purpose"))
+            else if (userInput.Contains("whats your purpose"))// looking for the keyword in the sentence the user types 
             {
                 Console.ForegroundColor = ConsoleColor.Green;
                 TypeWriterEffect("My purpose is to answer your questions that regard to cybersecurity saftey and to keep you safe online ");
                 Console.WriteLine();
 
             }
-            else if (userInput.Contains("phishing"))
+            else if (userInput.Contains("phishing"))// looking for the keyword in the sentence the user types 
             {
                 Console.ForegroundColor = ConsoleColor.Green;
                 TypeWriterEffect("Phishing is a scam usually over emails or messages where an attacker manipluates " +
                     "their target to gain senstive information");
                 Console.WriteLine();
             }
-            else if (userInput.Contains("victim of ") || userInput.Contains("phished"))
+            else if (userInput.Contains("victim of ") || userInput.Contains("phished"))// looking for the keyword in the sentence the user types 
             {
                 Console.ForegroundColor = ConsoleColor.Green;
                 TypeWriterEffect("Change your passwords\n"
@@ -65,7 +65,7 @@ namespace ST10340607_CyberSecurity_ChatBot
                 Console.WriteLine();
 
             }
-            else if (userInput.Contains("password"))
+            else if (userInput.Contains("password"))// looking for the keyword in the sentence the user types 
             {
                 Console.ForegroundColor = ConsoleColor.Green;
                 TypeWriterEffect(" Its is important to always follow safe password practices like\n " +
@@ -74,13 +74,13 @@ namespace ST10340607_CyberSecurity_ChatBot
                     "3.Always enable two factor authenticationn to ensure there is no unauthorised access");
                 Console.WriteLine();
             }
-            else if (userInput.Contains("safe browsing"))
+            else if (userInput.Contains("safe browsing"))// looking for the keyword in the sentence the user types 
             {
                 Console.ForegroundColor = ConsoleColor.Green;
                 TypeWriterEffect("Safe browsing  is the act of being safe while using the internet to avoid any potential scams or malware");
                 Console.WriteLine();
             }
-            else if (userInput.Contains("suspicious link"))
+            else if (userInput.Contains("suspicious link"))// looking for the keyword in the sentence the user types 
             {
                 Console.ForegroundColor = ConsoleColor.Green;
                 TypeWriterEffect(" Great Question,\n" +
@@ -91,7 +91,7 @@ namespace ST10340607_CyberSecurity_ChatBot
                 Console.WriteLine();
 
             }
-            else if (userInput.Contains("quit"))
+            else if (userInput.Contains("quit"))// looking for the keyword in the sentence the user types 
             {
                 Console.ForegroundColor = ConsoleColor.Green;
                 chatbotRun = false;

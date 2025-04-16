@@ -14,7 +14,7 @@ namespace ST10340607_CyberSecurity_ChatBot
                 if (OperatingSystem.IsWindows())
                 {
                     String audioFilePath = @"C:\Users\lab_services_student\Desktop\PROG6221-POE\1744782720344369660p9a3uycs-voicemaker.in-speech.wav";
-                    SoundPlayer player = new SoundPlayer(audioFilePath);
+                    SoundPlayer player = new SoundPlayer(audioFilePath);//creating a soundplayer object
                     player.Play(); // playing the audio file
                 }
 
