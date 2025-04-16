@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "gx2I2Wr53SU=",
+  "dgSpecHash": "2mHtcCEM65c=",
   "success": true,
   "projectFilePath": "C:\\Users\\lab_services_student\\Desktop\\PROG6221-POE\\ST10340607_CyberSecurity_ChatBot\\ST10340607_CyberSecurity_ChatBot.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\lab_services_student\\.nuget\\packages\\system.windows.extensions\\9.0.4\\system.windows.extensions.9.0.4.nupkg.sha512"
+  ],
   "logs": []
 }
