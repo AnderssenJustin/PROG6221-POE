@@ -9,7 +9,7 @@ namespace ST10340607_CyberSecurity_ChatBot
         static void Main(string[] args)
         {
             Console.Title = "Cybersecurity Awareness Chatbot";
-            try
+            /*try
             {
                 if (OperatingSystem.IsWindows())
                 {
@@ -22,7 +22,7 @@ namespace ST10340607_CyberSecurity_ChatBot
             catch (Exception)
             {
                 Console.WriteLine("There was an error with the audio and it did not play");
-            }
+            }*/
             Console.WriteLine(@" 
                                  .--------------------------------------------------------------------.
                                  |  ____      _               ____                       _ _          |

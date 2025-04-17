@@ -17,7 +17,7 @@ namespace ST10340607_CyberSecurity_ChatBot
             while (chatbotRun)
             {
                 Console.ForegroundColor = ConsoleColor.Green;            // changing the colour of the font. 
-                TypeWriterEffect("I am here to help with your Cybersecurity needs, Please ask me a question.");  // prompting the user to ask a question 
+                TypeWriterEffect("I am here to help with your Cybersecurity needs, Please ask me a question or type exit to quit .");  // prompting the user to ask a question 
                 Console.ResetColor();  // method called to change back to the original colour. 
                 Console.WriteLine();
 
