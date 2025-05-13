@@ -13,7 +13,7 @@ namespace ST10340607_CyberSecurity_ChatBot
         private readonly Dictionary<string, string> userMemory = new Dictionary<string, string>();
         private readonly Random _random = new Random();
         private string currentTopic = null;
-        
+
 
         private readonly Dictionary<string, List<string>> keywordResponses = new Dictionary<string, List<string>>() // this is the generic collection for the dictionary for when a tip is asked from the users 
         {
