@@ -8,7 +8,9 @@ namespace ST10340607_CyberSecurity_ChatBot
 {
     public abstract class Chatbot// creation of the abstract class 
     {
-        public abstract void cybersecurityQuestions();// abstract method that is overidden 
+        public abstract void cybersecurityQuestions();// abstract method that is overidden
+       
+
     }
 }
 
