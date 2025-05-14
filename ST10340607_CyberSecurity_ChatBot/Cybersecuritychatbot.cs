@@ -16,55 +16,55 @@ namespace ST10340607_CyberSecurity_ChatBot
 
 
         private readonly Dictionary<string, List<string>> keywordResponses = new Dictionary<string, List<string>>() // this is the generic collection for the dictionary for when a tip is asked from the users 
+    {
+        {"password", new List<string>
         {
-            {"password", new List<string>
-            {
-                "Use 12+ characters with mixed types and avoid personal info!",
-                "Consider a password manager - it's safer than reusing passwords.",
-                "Enable two-factor authentication wherever possible.",
-                "Regularly update important passwords every 3-6 months.",
-                "Use passphrases like 'PurpleTurtle$JumpsHigh' for better security."
-            }},
-            {"phishing", new List<string>
-            {
-                "Phishing scams often use urgent language to trick you.",
-                "Check sender email addresses carefully - look for misspellings.",
-                "Never download attachments from suspicious emails.",
-                "Legitimate companies will never ask for passwords via email.",
-                "Hover over links to see the actual URL before clicking."
-            }},
-            {"browsing", new List<string>
-            {
-                "Always look for HTTPS and padlock icons in your browser.",
-                "Use a VPN on public Wi-Fi to protect your data.",
-                "Keep your browser updated to patch security vulnerabilities.",
-                "Disable auto-fill for sensitive information in browsers.",
-                "Clear cookies regularly to prevent tracking."
-            }},
-            {"malware", new List<string>
-            {
-                "Keep your operating system and software updated with security patches.",
-                "Use a reputable antivirus and anti-malware solution and scan regularly.",
-                "Don't download software from untrusted sources.",
-                "Be careful with email attachments, even from known senders.",
-                "Back up your important data regularly to protect against ransomware."
-            }},
-            {"wifi", new List<string>
-            {
-                "Always use WPA3 encryption for your home WiFi if available.",
-                "Change default router usernames and passwords immediately.",
-                "Hide your network SSID to prevent easy discovery.",
-                "Use a guest network for visitors and IoT devices.",
-                "Regularly update your router's firmware to patch security vulnerabilities."
-            }}
-        };
+            "Use 12+ characters with mixed types and avoid personal info!",
+            "Consider a password manager - it's safer than reusing passwords.",
+            "Enable two-factor authentication wherever possible.",
+            "Regularly update important passwords every 3-6 months.",
+            "Use passphrases like 'PurpleTurtle$JumpsHigh' for better security."
+        }},
+        {"phishing", new List<string>
+        {
+            "Phishing scams often use urgent language to trick you.",
+            "Check sender email addresses carefully - look for misspellings.",
+            "Never download attachments from suspicious emails.",
+            "Legitimate companies will never ask for passwords via email.",
+            "Hover over links to see the actual URL before clicking."
+        }},
+        {"browsing", new List<string>
+        {
+            "Always look for HTTPS and padlock icons in your browser.",
+            "Use a VPN on public Wi-Fi to protect your data.",
+            "Keep your browser updated to patch security vulnerabilities.",
+            "Disable auto-fill for sensitive information in browsers.",
+            "Clear cookies regularly to prevent tracking."
+        }},
+        {"malware", new List<string>
+        {
+            "Keep your operating system and software updated with security patches.",
+            "Use a reputable antivirus and anti-malware solution and scan regularly.",
+            "Don't download software from untrusted sources.",
+            "Be careful with email attachments, even from known senders.",
+            "Back up your important data regularly to protect against ransomware."
+        }},
+        {"wifi", new List<string>
+        {
+            "Always use WPA3 encryption for your home WiFi if available.",
+            "Change default router usernames and passwords immediately.",
+            "Hide your network SSID to prevent easy discovery.",
+            "Use a guest network for visitors and IoT devices.",
+            "Regularly update your router's firmware to patch security vulnerabilities."
+        }}
+    };
 
         private readonly List<string> defaultResponses = new List<string>()
-        {
-            "I'm not sure I understand. Can you try rephrasing?",
-            "Could you ask about cybersecurity topics like passwords, phishing, malware, WiFi or safe browsing?",
-            "I specialize in cybersecurity - try asking about online safety."
-        };
+    {
+        "I'm not sure I understand. Can you try rephrasing?",
+        "Could you ask about cybersecurity topics like passwords, phishing, malware, WiFi or safe browsing?",
+        "I specialize in cybersecurity - try asking about online safety."
+    };
 
         public delegate void ResponseDelegate(string topic);// delegate to determine the response to the keywords
 
@@ -103,7 +103,10 @@ namespace ST10340607_CyberSecurity_ChatBot
                 response = OutputRandomResponses(keyword);
             }
 
+            
+            Console.ForegroundColor = ConsoleColor.Green;
             TypeWriterEffect(response);
+            Console.ResetColor();
         }
 
         private void RespondToPhishing(string keyword)// response to when user says they are interested in a ceratin topic 
@@ -125,7 +128,10 @@ namespace ST10340607_CyberSecurity_ChatBot
                 response = OutputRandomResponses(keyword);
             }
 
+            
+            Console.ForegroundColor = ConsoleColor.Green;
             TypeWriterEffect(response);
+            Console.ResetColor();
         }
 
         private void RespondToBrowsing(string keyword)// response to when user says they are interested in a ceratin topic 
@@ -147,7 +153,10 @@ namespace ST10340607_CyberSecurity_ChatBot
                 response = OutputRandomResponses(keyword);
             }
 
+            // Apply green color before outputting response
+            Console.ForegroundColor = ConsoleColor.Green;
             TypeWriterEffect(response);
+            Console.ResetColor();
         }
 
         private void RespondToMalware(string keyword)// response to when user says they are interested in malware 
@@ -169,7 +178,10 @@ namespace ST10340607_CyberSecurity_ChatBot
                 response = OutputRandomResponses(keyword);
             }
 
+            // Apply green color before outputting response
+            Console.ForegroundColor = ConsoleColor.Green;
             TypeWriterEffect(response);
+            Console.ResetColor();
         }
 
         private void RespondToWifi(string keyword)// response to when user says they are interested in wifi security
@@ -191,19 +203,22 @@ namespace ST10340607_CyberSecurity_ChatBot
                 response = OutputRandomResponses(keyword);
             }
 
+            // Apply green color before outputting response
+            Console.ForegroundColor = ConsoleColor.Green;
             TypeWriterEffect(response);
+            Console.ResetColor();
         }
 
         public override void cybersecurityQuestions()// this method is used to handle the propmts from the chatbot for the greeting and question prompts 
         {
             int promptCount = 0;
             var reminderMessages = new List<string>
-    {
-        "Remember I'm here to help with phishing, passwords, malware, WiFi security, and safe browsing!",
-        "Need help with cybersecurity? Ask me about phishing, passwords, malware, WiFi security or safe browsing!",
-        "Just a reminder - I can assist with cybersecurity topics like phishing, password safety, malware, WiFi security and safe browsing.",
-        "I'm still here to help with your cybersecurity questions!"
-    };
+            {
+           "Remember I'm here to help with phishing, passwords, malware, WiFi security, and safe browsing!",
+            "Need help with cybersecurity? Ask me about phishing, passwords, malware, WiFi security or safe browsing!",
+            "Just a reminder - I can assist with cybersecurity topics like phishing, password safety, malware, WiFi security and safe browsing.",
+            "I'm still here to help with your cybersecurity questions!"
+            };
 
 
             Console.ForegroundColor = ConsoleColor.Green;
@@ -226,7 +241,7 @@ namespace ST10340607_CyberSecurity_ChatBot
 
                 if (promptCount % 3 == 0)
                 {
-                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.ForegroundColor = ConsoleColor.Blue;
                     TypeWriterEffect(reminderMessages[_random.Next(reminderMessages.Count)]);
                     Console.ResetColor();
                 }
@@ -246,7 +261,9 @@ namespace ST10340607_CyberSecurity_ChatBot
             if (IsExitCommand(userInput))
             {
                 chatbotRun = false;
+                Console.ForegroundColor = ConsoleColor.Green;
                 TypeWriterEffect($"Goodbye {usersName}, stay secure!");
+                Console.ResetColor();
                 return;
             }
 
@@ -257,7 +274,7 @@ namespace ST10340607_CyberSecurity_ChatBot
 
             string emotion = detectEmotion(userInput);
             ChangeChatbotTone(emotion);
-
+            
             if (currentTopic != null && HandleFollowUp(userInput))
             {
                 return;
@@ -285,7 +302,9 @@ namespace ST10340607_CyberSecurity_ChatBot
                 }
             }
 
+            Console.ForegroundColor = ConsoleColor.Green;
             TypeWriterEffect(OutputRandomResponses("default"));
+            Console.ResetColor();
             currentTopic = null;
         }
 
@@ -300,7 +319,9 @@ namespace ST10340607_CyberSecurity_ChatBot
             if (input.Contains("forget what you know") || input.Contains("clear memory"))
             {
                 userMemory.Clear();
+                Console.ForegroundColor = ConsoleColor.Green;
                 TypeWriterEffect("I've cleared all stored information.");
+                Console.ResetColor();
                 return true;
             }
 
@@ -311,7 +332,9 @@ namespace ST10340607_CyberSecurity_ChatBot
         {
             if (userMemory.Count == 0)
             {
+                Console.ForegroundColor = ConsoleColor.Green;
                 TypeWriterEffect("I don't remember any specific preferences yet.");
+                Console.ResetColor();
                 return;
             }
 
@@ -328,7 +351,9 @@ namespace ST10340607_CyberSecurity_ChatBot
                 response.Append($"\n- Your name is {usersName}");
             }
 
+            Console.ForegroundColor = ConsoleColor.Green;
             TypeWriterEffect(response.ToString());
+            Console.ResetColor();
         }
 
         private bool IsExitCommand(string input) // determining if the user has inputted the exit command to stop app 
@@ -341,20 +366,26 @@ namespace ST10340607_CyberSecurity_ChatBot
             if (input.Contains("what is phishing"))
             {
                 currentTopic = "phishing";
+                Console.ForegroundColor = ConsoleColor.Green;
                 TypeWriterEffect("Phishing is a type of cyberattack where attackers impersonate legitimate institutions to steal sensitive data like login credentials or financial information.");
+                Console.ResetColor();
                 return true;
             }
 
             if (input.Contains("what is password safety") || input.Contains("what is password security"))
             {
                 currentTopic = "password";
+                Console.ForegroundColor = ConsoleColor.Green;
                 TypeWriterEffect("Password safety refers to practices like using strong, unique passwords, enabling multi-factor authentication, and avoiding password reuse.");
+                Console.ResetColor();
                 return true;
             }
             if (input.Contains("what is safe passwords") || (input.Contains("what are safe passwords")))
             {
                 currentTopic = "password";
+                Console.ForegroundColor = ConsoleColor.Green;
                 TypeWriterEffect("Safe passwords are passwords that contain upper and lower case letters as well as numerical values and special characters");
+                Console.ResetColor();
                 return true;
 
             }
@@ -362,42 +393,54 @@ namespace ST10340607_CyberSecurity_ChatBot
             if (input.Contains("what is safe browsing") || input.Contains("what is secure browsing"))
             {
                 currentTopic = "browsing";
+                Console.ForegroundColor = ConsoleColor.Green;
                 TypeWriterEffect("Safe browsing means using secure connections (HTTPS), avoiding suspicious sites, using updated browsers, and being cautious with downloads and pop-ups.");
+                Console.ResetColor();
                 return true;
             }
 
             if (input.Contains("what is malware") || input.Contains("what are viruses"))
             {
                 currentTopic = "malware";
+                Console.ForegroundColor = ConsoleColor.Green;
                 TypeWriterEffect("Malware refers to malicious software designed to damage or gain unauthorized access to computer systems, including viruses, trojans, spyware, and ransomware.");
+                Console.ResetColor();
                 return true;
             }
 
             if (input.Contains("what is wifi security") || input.Contains("how to secure wifi"))
             {
                 currentTopic = "wifi";
+                Console.ForegroundColor = ConsoleColor.Green;
                 TypeWriterEffect("WiFi security involves protecting your wireless network from unauthorized access through encryption, strong passwords, and proper router configuration.");
+                Console.ResetColor();
                 return true;
             }
 
             if (input.Contains("spot phishing") || input.Contains("identify phishing"))
             {
                 currentTopic = "phishing";
+                Console.ForegroundColor = ConsoleColor.Green;
                 TypeWriterEffect("Look for: 1) Generic greetings, 2) Urgent threats, 3) Mismatched URLs, 4) Poor grammar, 5) Requests for sensitive info.");
+                Console.ResetColor();
                 return true;
             }
 
             if (input.Contains("detect malware") || input.Contains("identify malware") || input.Contains("malware signs"))
             {
                 currentTopic = "malware";
+                Console.ForegroundColor = ConsoleColor.Green;
                 TypeWriterEffect("Watch for: 1) Slow performance, 2) Unexpected pop-ups, 3) Strange browser behavior, 4) Missing files, 5) Unusual network activity.");
+                Console.ResetColor();
                 return true;
             }
 
             if (input.Contains("secure my wifi") || input.Contains("protect wifi network"))
             {
                 currentTopic = "wifi";
+                Console.ForegroundColor = ConsoleColor.Green;
                 TypeWriterEffect("Secure your WiFi by: 1) Using WPA3 encryption, 2) Creating strong passwords, 3) Changing default credentials, 4) Enabling firewall, 5) Disabling WPS.");
+                Console.ResetColor();
                 return true;
             }
 
@@ -447,19 +490,25 @@ namespace ST10340607_CyberSecurity_ChatBot
         {
             if (input.Contains("more") || input.Contains("explain further") || input.Contains("go on"))
             {
+                Console.ForegroundColor = ConsoleColor.Green;
                 TypeWriterEffect(GetDeeperExplanation(currentTopic));
+                Console.ResetColor();
                 return true;
             }
 
             if (input.Contains("clarify") || input.Contains("dont understand") || input.Contains("confused"))
             {
+                Console.ForegroundColor = ConsoleColor.Green;
                 TypeWriterEffect(GetSimplerExplanation(currentTopic));
+                Console.ResetColor();
                 return true;
             }
 
             if (input.Contains("what about") || input.Contains("how about") || input.Contains("also"))
             {
+                Console.ForegroundColor = ConsoleColor.Green;
                 TypeWriterEffect(GetRelatedTopic(currentTopic));
+                Console.ResetColor();
                 return true;
             }
 
@@ -566,37 +615,39 @@ namespace ST10340607_CyberSecurity_ChatBot
             RememberUserInterest(topic);
 
             var responses = new Dictionary<string, List<string>>()
+        {
+            {"password", new List<string>
             {
-                {"password", new List<string>
-                {
-                    $"I'll remember password security matters to you, {usersName}.",
-                    $"Noted! I'll focus on password tips for you, {usersName}.",
+                $"I'll remember password security matters to you, {usersName}.",
+                $"Noted! I'll focus on password tips for you, {usersName}.",
 
-                }},
-                {"phishing", new List<string>
-                {
-                    $"Noted, I'll watch for phishing topics for you, {usersName}.",
-                    $"I'll remember this, Phishing awareness is important!",
+            }},
+            {"phishing", new List<string>
+            {
+                $"Noted, I'll watch for phishing topics for you, {usersName}.",
+                $"I'll remember this, Phishing awareness is important!",
 
-                }},
-                {"browsing", new List<string>
-                {
-                    $"Noted! Web safety is important to you.",
-                    $"I'll remember you are intrested in safe browsing."
-                }},
-                {"malware", new List<string>
-                {
-                    $"I'll remember malware protection matters to you, {usersName}.",
-                    $"Got it! Malware defense is an important topic."
-                }},
-                {"wifi", new List<string>
-                {
-                    $"I'll remember WiFi security is important to you, {usersName}.",
-                    $"Noted! Network security is a great focus area."
-                }}
-            };
+            }},
+            {"browsing", new List<string>
+            {
+                $"Noted! Web safety is important to you.",
+                $"I'll remember you are intrested in safe browsing."
+            }},
+            {"malware", new List<string>
+            {
+                $"I'll remember malware protection matters to you, {usersName}.",
+                $"Got it! Malware defense is an important topic."
+            }},
+            {"wifi", new List<string>
+            {
+                $"I'll remember WiFi security is important to you, {usersName}.",
+                $"Noted! Network security is a great focus area."
+            }}
+        };
 
+            Console.ForegroundColor = ConsoleColor.Green;
             TypeWriterEffect(responses[topic][_random.Next(responses[topic].Count)]);
+            Console.ResetColor();
         }
 
         public void RememberUserInterest(string topic) // method used to remeber the intrest that the user has mentioned 
@@ -621,31 +672,37 @@ namespace ST10340607_CyberSecurity_ChatBot
 
         private void ShowActionSteps()
         {
+            Console.ForegroundColor = ConsoleColor.Green;
             TypeWriterEffect("If you've been compromised by phishing:");
             Console.WriteLine("1. Change affected passwords immediately");
             Console.WriteLine("2. Contact your bank if financial info was shared");
             Console.WriteLine("3. Scan devices for malware");
             Console.WriteLine("4. Report to the impersonated organization");
+            Console.ResetColor();
         }
 
         private void ShowMalwareActionSteps()
         {
+            Console.ForegroundColor = ConsoleColor.Green;
             TypeWriterEffect("If you suspect malware infection:");
             Console.WriteLine("1. Disconnect from the internet to prevent data theft");
             Console.WriteLine("2. Run a full system scan with updated antivirus software");
             Console.WriteLine("3. Use a separate malware removal tool as a second opinion");
             Console.WriteLine("4. Back up important data if not already done");
             Console.WriteLine("5. Consider resetting your system if infection persists");
+            Console.ResetColor();
         }
 
         private void ShowWifiActionSteps()
         {
+            Console.ForegroundColor = ConsoleColor.Green;
             TypeWriterEffect("If your WiFi network is compromised:");
             Console.WriteLine("1. Change your router's admin password immediately");
             Console.WriteLine("2. Update router firmware to the latest version");
             Console.WriteLine("3. Change your WiFi network name and password");
             Console.WriteLine("4. Enable WPA3 encryption if available");
             Console.WriteLine("5. Check connected devices and remove unknown ones");
+            Console.ResetColor();
         }
 
         public override string detectEmotion(string input) // this method is used to detect if there is any emotion in the users input 
@@ -667,13 +724,19 @@ namespace ST10340607_CyberSecurity_ChatBot
             switch (emotion)
             {
                 case "worried":
+                    Console.ForegroundColor = ConsoleColor.Green;
                     TypeWriterEffect("I understand this is concerning. Let me help...");
+                    Console.ResetColor();
                     break;
                 case "frustrated":
+                    Console.ForegroundColor = ConsoleColor.Green;
                     TypeWriterEffect("Cybersecurity can be frustrating. Let's solve this...");
+                    Console.ResetColor();
                     break;
                 case "confused":
+                    Console.ForegroundColor = ConsoleColor.Green;
                     TypeWriterEffect("This can be confusing. Let me explain...");
+                    Console.ResetColor();
                     break;
             }
         }
