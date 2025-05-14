@@ -17,7 +17,7 @@ namespace ST10340607_CyberSecurity_ChatBot
 
         private readonly Dictionary<string, List<string>> keywordResponses = new Dictionary<string, List<string>>() // this is the generic collection for the dictionary for when a tip is asked from the users 
     {
-        {"password", new List<string>
+        {"password", new List<string> // these are the tips for password security 
         {
             "Use 12+ characters with mixed types and avoid personal info!",
             "Consider a password manager - it's safer than reusing passwords.",
@@ -25,7 +25,7 @@ namespace ST10340607_CyberSecurity_ChatBot
             "Regularly update important passwords every 3-6 months.",
             "Use passphrases like 'PurpleTurtle$JumpsHigh' for better security."
         }},
-        {"phishing", new List<string>
+        {"phishing", new List<string> // these are the tips for Phishing  
         {
             "Phishing scams often use urgent language to trick you.",
             "Check sender email addresses carefully - look for misspellings.",
@@ -33,7 +33,7 @@ namespace ST10340607_CyberSecurity_ChatBot
             "Legitimate companies will never ask for passwords via email.",
             "Hover over links to see the actual URL before clicking."
         }},
-        {"browsing", new List<string>
+        {"browsing", new List<string> // these are the tips for safe browsing 
         {
             "Always look for HTTPS and padlock icons in your browser.",
             "Use a VPN on public Wi-Fi to protect your data.",
@@ -41,7 +41,7 @@ namespace ST10340607_CyberSecurity_ChatBot
             "Disable auto-fill for sensitive information in browsers.",
             "Clear cookies regularly to prevent tracking."
         }},
-        {"malware", new List<string>
+        {"malware", new List<string>// these are the tips for malware
         {
             "Keep your operating system and software updated with security patches.",
             "Use a reputable antivirus and anti-malware solution and scan regularly.",
@@ -49,7 +49,7 @@ namespace ST10340607_CyberSecurity_ChatBot
             "Be careful with email attachments, even from known senders.",
             "Back up your important data regularly to protect against ransomware."
         }},
-        {"wifi", new List<string>
+        {"wifi", new List<string>// these are the tips for wifi security 
         {
             "Always use WPA3 encryption for your home WiFi if available.",
             "Change default router usernames and passwords immediately.",
@@ -59,14 +59,14 @@ namespace ST10340607_CyberSecurity_ChatBot
         }}
     };
 
-        private readonly List<string> defaultResponses = new List<string>()
+        private readonly List<string> defaultResponses = new List<string>() // the responses if the chatbot dosunt understand 
     {
         "I'm not sure I understand. Can you try rephrasing?",
         "Could you ask about cybersecurity topics like passwords, phishing, malware, WiFi or safe browsing?",
         "I specialize in cybersecurity - try asking about online safety."
     };
 
-        public delegate void ResponseDelegate(string topic);// delegate to determine the response to the keywords
+        public delegate void ResponseDelegate(string topic);// delegate to determine the response to the keywords and is the pointer for the responsehandlers
 
         private readonly Dictionary<string, ResponseDelegate> keywordResponseHandlers = new Dictionary<string, ResponseDelegate>();
 
@@ -90,7 +90,7 @@ namespace ST10340607_CyberSecurity_ChatBot
 
             if (userMemory.ContainsKey("interest") && userMemory["interest"] == "password")
             {
-                response = $"{usersName}, since password security matters to you: " +
+                response = $"{usersName}, since password security interests you: " +
                           OutputRandomResponses(keyword);
 
                 if (_random.NextDouble() > 0.5)
@@ -103,7 +103,7 @@ namespace ST10340607_CyberSecurity_ChatBot
                 response = OutputRandomResponses(keyword);
             }
 
-            
+
             Console.ForegroundColor = ConsoleColor.Green;
             TypeWriterEffect(response);
             Console.ResetColor();
@@ -115,7 +115,7 @@ namespace ST10340607_CyberSecurity_ChatBot
 
             if (userMemory.ContainsKey("interest") && userMemory["interest"] == "phishing")
             {
-                response = $"{usersName}, since phishing concerns you: " +
+                response = $"{usersName}, since phishing interests you: " +
                           OutputRandomResponses(keyword);
 
                 if (_random.NextDouble() > 0.5)
@@ -128,7 +128,7 @@ namespace ST10340607_CyberSecurity_ChatBot
                 response = OutputRandomResponses(keyword);
             }
 
-            
+
             Console.ForegroundColor = ConsoleColor.Green;
             TypeWriterEffect(response);
             Console.ResetColor();
@@ -165,7 +165,7 @@ namespace ST10340607_CyberSecurity_ChatBot
 
             if (userMemory.ContainsKey("interest") && userMemory["interest"] == "malware")
             {
-                response = $"{usersName}, since malware protection concerns you: " +
+                response = $"{usersName}, since malware interests you: " +
                           OutputRandomResponses(keyword);
 
                 if (_random.NextDouble() > 0.5)
@@ -190,7 +190,7 @@ namespace ST10340607_CyberSecurity_ChatBot
 
             if (userMemory.ContainsKey("interest") && userMemory["interest"] == "wifi")
             {
-                response = $"{usersName}, since WiFi security matters to you: " +
+                response = $"{usersName}, since WiFi security interests you: " +
                           OutputRandomResponses(keyword);
 
                 if (_random.NextDouble() > 0.5)
@@ -274,7 +274,7 @@ namespace ST10340607_CyberSecurity_ChatBot
 
             string emotion = detectEmotion(userInput);
             ChangeChatbotTone(emotion);
-            
+
             if (currentTopic != null && HandleFollowUp(userInput))
             {
                 return;
@@ -625,23 +625,23 @@ namespace ST10340607_CyberSecurity_ChatBot
             {"phishing", new List<string>
             {
                 $"Noted, I'll watch for phishing topics for you, {usersName}.",
-                $"I'll remember this, Phishing awareness is important!",
+                $"I'll remember this {usersName}, Phishing awareness is important!",
 
             }},
             {"browsing", new List<string>
             {
-                $"Noted! Web safety is important to you.",
-                $"I'll remember you are intrested in safe browsing."
+                $"Noted! Web safety is important to you, {usersName}.",
+                $"I'll remember you are intrested in safe browsing {usersName}."
             }},
             {"malware", new List<string>
             {
                 $"I'll remember malware protection matters to you, {usersName}.",
-                $"Got it! Malware defense is an important topic."
+                $"Got it! Malware defense is an important topic, {usersName}."
             }},
             {"wifi", new List<string>
             {
                 $"I'll remember WiFi security is important to you, {usersName}.",
-                $"Noted! Network security is a great focus area."
+                $"Noted!,{usersName} Network security is a great focus area."
             }}
         };
 
